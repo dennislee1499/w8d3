@@ -8,6 +8,10 @@ class Clock {
     this.hours = this.date.getHours();
     this.minutes = this.date.getMinutes();
     this.seconds = this.date.getSeconds();
+    // // setInterval(this._tick(), 1000);
+    //  setInterval(() => {
+    //    this._tick();
+    //  }, 1000);
     this._tick();
   }
 

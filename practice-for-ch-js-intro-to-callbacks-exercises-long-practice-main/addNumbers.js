@@ -42,14 +42,16 @@ function addNumbers(sum, numsLeft, completionCallback) {
       sum += parseInt(num);
       completionCallback(sum);
       addNumbers(sum, numsLeft - 1, completionCallback);
-      // rl.close();
+
     });
   }
   return sum;
 }
+
 // addNumbers(0, 3, (sum) => console.log(`Total Sum: ${sum}`));
 
 rl.question("Select A Number", num => {
   addNumbers(0, num, (sum) => console.log(`Total Sum: ${sum}`));
   // rl.close();
 })
+
