@@ -43,9 +43,6 @@ class Clock {
     // 2. Store the hours, minutes, and seconds.
     // 3. Call printTime.
     // 4. Schedule the tick at 1 second intervals.
-    this.date = new Date(){
-      this.hour = 
-    }
   }
 
   printTime() {
@@ -56,6 +53,10 @@ class Clock {
   _tick() {
     // 1. Increment the time by one second.
     // 2. Call printTime.
+    let that = this;
+    setInterval(fuction () {
+
+    }
   }
 }
 
@@ -63,8 +64,7 @@ const clock = new Clock();
 ```
 
 [setinterval-doc]: https://nodejs.org/api/timers.html#setintervalcallback-delay-args
-[date-docs]:
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Date.prototype_Methods
+[date-docs]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Date.prototype_Methods
 
 ## `addNumbers`
 
@@ -94,7 +94,7 @@ Next, write a `addNumbers(sum, numsLeft, completionCallback)` function:
 To test, try out:
 
 ```javascript
-addNumbers(0, 3, sum => console.log(`Total Sum: ${sum}`));
+addNumbers(0, 3, (sum) => console.log(`Total Sum: ${sum}`));
 ```
 
 This should prompt for three numbers, printing out the partial sums and then the
@@ -122,7 +122,7 @@ class Lamp {
   }
 }
 
-const turnOn = function() {
+const turnOn = function () {
   console.log("Turning on " + this.name);
 };
 
@@ -201,7 +201,7 @@ const readline = require("readline");
 
 const reader = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 // Write this first.
@@ -233,7 +233,7 @@ function absurdBubbleSort(arr, sortCompletionCallback) {
   // Kick the first outer loop off, starting `madeAnySwaps` as true.
 }
 
-absurdBubbleSort([3, 2, 1], function(arr) {
+absurdBubbleSort([3, 2, 1], function (arr) {
   console.log("Sorted array: " + JSON.stringify(arr));
   reader.close();
 });
@@ -411,5 +411,4 @@ searching once the user stops "typing" for at least 500ms!
 
 Go back and refactor the asynchronous exercises to use [ES6 Promises][promise].
 
-[promise]:
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise

@@ -23,10 +23,20 @@ class Clock {
     let that = this;
     setInterval(function () {
       that.seconds += 1;
+      if (that.seconds === 60) {
+        that.seconds = 0;
+        that.minutes += 1;
+      }
+      if (that.minutes === 60) {
+        that.minutes = 0;
+        that.hours += 1;
+      }
+      if (that.hours === 24) {
+        that.hours = 0;
+      }
       that.printTime();
     }, 1000);
   }
 }
 
 const clock = new Clock();
-
