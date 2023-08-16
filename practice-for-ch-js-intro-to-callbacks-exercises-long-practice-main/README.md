@@ -43,6 +43,9 @@ class Clock {
     // 2. Store the hours, minutes, and seconds.
     // 3. Call printTime.
     // 4. Schedule the tick at 1 second intervals.
+    this.date = new Date(){
+      this.hour = 
+    }
   }
 
   printTime() {
