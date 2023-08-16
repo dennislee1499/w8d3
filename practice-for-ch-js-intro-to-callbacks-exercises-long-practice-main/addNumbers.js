@@ -33,14 +33,23 @@ const rl = readline.createInterface({
 });
 
 function addNumbers(sum, numsLeft, completionCallback) {
+  if (numsLeft === 0) {
+    completionCallback(sum);
+    rl.close();
+  }
   if (numsLeft > 0) {
     rl.question("Pick a number?", (num) => {
       sum += parseInt(num);
       completionCallback(sum);
       addNumbers(sum, numsLeft - 1, completionCallback);
-      rl.close;
+      // rl.close();
     });
   }
   return sum;
 }
-addNumbers(0, 3, (sum) => console.log(`Total Sum: ${sum}`));
+// addNumbers(0, 3, (sum) => console.log(`Total Sum: ${sum}`));
+
+rl.question("Select A Number", num => {
+  addNumbers(0, num, (sum) => console.log(`Total Sum: ${sum}`));
+  // rl.close();
+})
